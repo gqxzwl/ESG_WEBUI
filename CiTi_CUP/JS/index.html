@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login/register</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="../CSS/forget_style.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/index.css">
+</head>
+
+<body>
+    <!-- login/register container -->
+    <div class="container_index">
+        <!-- register -->
+        <div class="form-container sign-up-container">
+            <div class="form">
+                <h2 id="registered">注册账号</h2>
+                <input type="text" name="username" id="username" placeholder="用户名">
+                <input type="email" name="emal" id="email" placeholder="邮箱">
+                <input type="password" name="password" id="password" placeholder="密码">
+                <button class="signUp" id="register">注册</button>
+            </div>
+        </div>
+        <!-- login -->
+        <div class="form-container sign-in-container">
+            <div class="form">
+                <h2 id="entered">登陆账号</h2>
+                <input type="email" name="emal" id="enterEmail" placeholder="邮箱">
+                <input type="password" name="password" id="enterPassword" placeholder="密码">
+                <a class="nav-link" data-toggle="modal" data-target="#ResetModal">找回密码</a>
+                <button class="signIn" id="enter">登录</button>
+            </div>
+        </div>
+        <!-- overlay container 覆盖   注册之后返回登陆账号-->
+        <div class="overlay_container">
+            <div class="overlay">
+                <!-- overlay left -->
+                <div class="overlay_panel overlay_left_container">
+                    <h2>欢迎！</h2>
+                    <p>登录账号开始吧！</p>
+                    <button id="sign-in">返回登录账号</button>
+                </div>
+                <!-- overlay right -->
+                <div class="overlay_panel overlay_right_container">
+                    <h2>欢迎！</h2>
+                    <p>注册账号开始吧！</p>
+                    <button id="sign-up">开始注册账号</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--找回密码的模态框-->
+    <div class="modal fade" id="ResetModal" role="dialog">
+        <div class="temp-custom-modal-wrap">
+            <div class="modal-dialog">
+                <div class="modal-content temp-custom-modal-content">
+                    <button type="button" class="close temp-custom-close-button" data-dismiss="modal">×
+                    </button>
+                    <div class="modal-body temp-custom-modal-body">
+                        <div class="temp-login-form-wrapper">
+                            <div class="row custom-row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 temp-form-column-wrap-image">
+                                    <div class=" temp-reset-password-column-wrap-image">
+                                        <div class="temp-form-inner-wrapper">
+                                            <h2>设置新密码</h2>
+                                            <p>通过注册邮箱接收验证码，从而重新设置密码</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="temp-form-column-wrap">
+                                        <h2 id="changePasswd">找回密码</h2>
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"><span
+                                                            class="temp-span-wrap temp-span-input-label-wrap"><input
+                                                                class="temp_input_field" id="forgetEmail"><label
+                                                                class="temp_input_label"><span
+                                                                    class="temp_input_label-content">邮箱
+                                                                </span></label></span></div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"><span
+                                                            class="temp-span-wrap temp-span-input-label-wrap"><input
+                                                                class="temp_input_field" id="captcha"><label
+                                                                class="temp_input_label"><span
+                                                                    class="temp_input_label-content">验证码
+                                                                </span></label></span></div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"><span
+                                                            class="temp-span-wrap temp-span-input-label-wrap"><input
+                                                                class="temp_input_field" type="password"
+                                                                id="newPasswd"><label class="temp_input_label"><span
+                                                                    class="temp_input_label-content">新密码</span></label></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="form-group"><span
+                                                            class="temp-span-wrap temp-span-input-label-wrap"><input
+                                                                class="temp_input_field" type="password"
+                                                                id="confirmNewPasswd"><label
+                                                                class="temp_input_label"><span
+                                                                    class="temp_input_label-content">确认新密码</span></label></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="temp-login-button-wrap">
+                                                        <button class="btn btn-info temp-form-button" type="button"
+                                                            id="sendEmail">发送邮箱验证码
+                                                        </button>
+                                                        &nbsp;&nbsp;
+                                                        <button class="btn btn-info temp-form-button" type="button"
+                                                            id="resetPassswd">确定
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--外部的JavaScript-->
+    <script src="../JS/index.js" charset="UTF-8"></script>
+    <script src="../JS/jquery.js" charset="UTF-8"></script>
+    <script src="../JS/bootstrap.js" charset="UTF-8"></script>
+    <script type="text/javascript" charset="utf-8" src="../JS/background_ball.js"></script>
+
+</body>
+
+</html>
